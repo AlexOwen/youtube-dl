@@ -49,7 +49,7 @@ class AudioBoomIE(InfoExtractor):
                 return clip.get(field)
 
         audio_url = from_clip('clipURLPriorToLoading') or self._og_search_property(
-            'audio', webpage, 'audio url')
+            'enclosure', webpage, 'audio url')
         title = from_clip('title') or self._html_search_meta(
             ['og:title', 'og:audio:title', 'audio_title'], webpage)
         description = from_clip('description') or clean_html(from_clip('formattedDescription')) or self._og_search_description(webpage)
